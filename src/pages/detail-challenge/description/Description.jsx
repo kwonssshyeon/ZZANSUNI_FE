@@ -1,4 +1,5 @@
-import { Styles } from "./styles";
+import * as Styles from './styles';
+
 const Description = () => {
 
 
