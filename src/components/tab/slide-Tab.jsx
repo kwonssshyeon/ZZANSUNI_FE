@@ -14,7 +14,6 @@ import {
 export const Tab = ({ label, active, onClick }) => {
   return (
     <StylizedTab
-      role="tab"
       active={active}
       onClick={onClick}
       inactiveStyle={inactiveTab}

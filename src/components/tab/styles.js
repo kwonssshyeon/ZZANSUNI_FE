@@ -21,7 +21,7 @@ export const StylizedTab = styled.div`
   line-height : 50px;
 
 
-  cursor: ${(p) => (p.disabled ? "default" : "pointer")};
+  
   
   ${(p) =>
     p.active &&
