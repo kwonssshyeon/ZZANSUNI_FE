@@ -19,27 +19,76 @@ const colorGreen06 = '#F0F4F3';
 const colorGrey01 = '#797979';
 const colorGrey02 = '#B8B8B8';
 
-
-
+// 티어별 색상 정의ㄴ
+const colorClass01 = '#C0C0C0C0';
+const colorClass02 = '#B28753';
+const colorClass03 = '#74A3D1';
+const colorClass04 = '#D6B534';
+const colorClass05 = '#861A22';
+const colorClass06 = '#462679';
+const colorClass07 = '#069729';
 
 export const GlobalStyle = css`
-    :root {
-        --font-size-xxl: ${fontSizeXXl};
-        --font-size-xl: ${fontSizeXl};
-        --font-size-lg: ${fontSizeLg};
-        --font-size-md: ${fontSizeMd};
-        --font-size-sm: ${fontSizeSm};
-        --font-size-xs: ${fontSizeXs};
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-        --color-white: ${colorWhite};
-        --color-green-01: ${colorGreen01};
-        --color-green-02: ${colorGreen02};
-        --color-green-03: ${colorGreen03};
-        --color-green-04: ${colorGreen04};
-        --color-green-05: ${colorGreen05};
-        --color-green-06: ${colorGreen06};
-        --color-grey-01: ${colorGrey01};
-        --color-grey-02: ${colorGrey02};
-        
+  :root {
+    --font-size-xxl: ${fontSizeXXl};
+    --font-size-xl: ${fontSizeXl};
+    --font-size-lg: ${fontSizeLg};
+    --font-size-md: ${fontSizeMd};
+    --font-size-sm: ${fontSizeSm};
+    --font-size-xs: ${fontSizeXs};
+
+    --color-white: ${colorWhite};
+    --color-green-01: ${colorGreen01};
+    --color-green-02: ${colorGreen02};
+    --color-green-03: ${colorGreen03};
+    --color-green-04: ${colorGreen04};
+    --color-green-05: ${colorGreen05};
+    --color-green-06: ${colorGreen06};
+    --color-grey-01: ${colorGrey01};
+    --color-grey-02: ${colorGrey02};
+
+    --color-class-01: ${colorClass01};
+    --color-class-02: ${colorClass02};
+    --color-class-03: ${colorClass03};
+    --color-class-04: ${colorClass04};
+    --color-class-05: ${colorClass05};
+    --color-class-06: ${colorClass06};
+    --color-class-07: ${colorClass07};
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+    box-sizing: border-box;
+    overflow-y: auto;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+
+    /* 중앙 정렬 및 고정 너비 적용 */
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+
+    // 모바일 너비 적용
+    @media (min-width: 768px) {
+      width: 480px;
     }
+
+    /* position: fixed; */
+    /* left: 50%; */
+  }
+
+  img {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 `;
