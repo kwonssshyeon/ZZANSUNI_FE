@@ -65,7 +65,7 @@ export const GlobalStyle = css`
     box-sizing: border-box;
     overflow-y: auto;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
 
     /* 중앙 정렬 및 고정 너비 적용 */
