@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+
 
 import {
   TabHeaderContainer,
@@ -61,26 +61,4 @@ export const TabPanel = ({ children, value, selectedIndex }) => {
       {children}
     </StyledTabPanel>
   );
-};
-
-
-
-
-Tab.propsTypes = {
-  label: PropTypes.any,
-  value: PropTypes.any,
-  active: PropTypes.any,
-  onClick: PropTypes.any,
-};
-
-Tabs.propsTypes = {
-  selectedTab: PropTypes.any,
-  onChange: PropTypes.any,
-  children: PropTypes.any,
-};
-
-TabPanel.propsTypes = {
-  children: PropTypes.any,
-  value: PropTypes.any,
-  selectedIndex: PropTypes.any,
 };

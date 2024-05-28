@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from '@emotion/styled';
+
 
 export const TabHeaderContainer = styled.div`
   position: relative;
