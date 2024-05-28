@@ -7,6 +7,8 @@ import Dashboard from '@/pages/dashboard/Dashboard';
 import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
 import Rank from '@/pages/rank/Rank';
+import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
+
 
 export const Router = createBrowserRouter([
   {
@@ -42,6 +44,10 @@ export const Router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <Dashboard />,
+      },
+      {
+        path: 'challenge-detail',
+        element: <ChallengeDetailPage />,
       },
     ],
   },
