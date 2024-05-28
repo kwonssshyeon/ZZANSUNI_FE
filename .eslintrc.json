@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2020": true },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "airbnb",
+    "prettier"
+  ],
+  "ignorePatterns": ["dist", ".eslintrc.json"],
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+  "settings": { "react": { "version": "18.2" } },
+  "plugins": ["react-refresh, jsx-a11y, import, prettier"],
+  "rules": {
+    "react/jsx-no-target-blank": "off",
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "no-param-reassign": ["error", { "props": false }]
+  }
+}
