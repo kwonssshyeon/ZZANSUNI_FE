@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Tabs, Tab, TabPanel } from "../../components/tab/slide-Tab";
 import Page2 from "./page2";
 import Page1 from "./page1";
+import TopBar from "../../components/top-bar/top-Bar"
 
 import {
   TabsContainer,
@@ -18,6 +19,7 @@ const ChallengeDetailPage = () => {
 
   return (
     <div>
+      <TopBar title={"챌린지 상세"}/>
       <TabsContainer>
         <Tabs selectedTab={activeTab} onChange={handleChange}>
           <Tab label="챌린지" value={0}></Tab>

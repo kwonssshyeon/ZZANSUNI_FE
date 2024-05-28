@@ -9,6 +9,7 @@ import MainPage from '@/pages/main/MainPage';
 import Rank from '@/pages/rank/Rank';
 import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
 
+
 export const Router = createBrowserRouter([
   {
     path: '/',

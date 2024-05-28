@@ -19,6 +19,8 @@ export const NavigateBarLayout = styled.div`
 
   border-top: 0.5px solid #bdc5cd;
   background: #fafafa;
+
+  font-size: var(--font-size-lg);
 `;
 
 export const IconContainer = styled.div`

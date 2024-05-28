@@ -10,6 +10,7 @@ import {
   TabSlider
 } from "./styles";
 
+
 export const Tab = ({ label, active, onClick }) => {
   return (
     <StylizedTab

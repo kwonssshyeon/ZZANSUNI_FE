@@ -1,20 +1,25 @@
-import styled, { css, keyframes } from '@emotion/styled';
+import styled from '@emotion/styled';
+import { css, keyframes } from 'styled-components';
 
 
 export const TabHeaderContainer = styled.div`
-  position: relative;
-  width: 90vw;
+  position: absolute;
+  width: 100%;
+  
 `;
 
 export const StylizedTab = styled.div`
-  z-index: 100;
+  z-index: 1;
   color: var(--color-grey-02);
   width: 100%;
-  padding: 20px 0px;
-  font-size: 1.25rem;
+  font-size: var(--font-size-md);
   background-color: transparent;
   border: none;
-  border-bottom-color: #393e46;
+  height : 50px;
+  margin-top: 3px;
+  text-align : center;
+  line-height : 50px;
+
 
   cursor: ${(p) => (p.disabled ? "default" : "pointer")};
   
@@ -35,9 +40,7 @@ export const StylizedTab = styled.div`
 
 export const TabsHolder = styled.div`
   display: flex;
-  /* can be used to stack them vertically by using column*/
-  flex-direction: row;
-  
+  flex-direction: row;  
 `;
 
 export const inactiveTab = {
@@ -48,9 +51,9 @@ export const inactiveTab = {
 
 export const TabSlider = styled.div`
   position: absolute;
-  top: 0;
+  top: 3px;
   width: ${(props) => `${props.width}px`};
-  height: 70px;
+  height: 50px;
   background-color: var(--color-green-01);
   border-radius: 20px;
   transition: 0.2s;
