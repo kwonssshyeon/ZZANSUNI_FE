@@ -8,6 +8,7 @@ import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
 import Rank from '@/pages/rank/Rank';
 import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
+import ChallengeRecordPage from '@/pages/record-challenge/ChallengeRecordPage';
 
 
 export const Router = createBrowserRouter([
@@ -48,6 +49,10 @@ export const Router = createBrowserRouter([
       {
         path: 'challenge-detail',
         element: <ChallengeDetailPage />,
+      },
+      {
+        path: 'challenge-record',
+        element: <ChallengeRecordPage />,
       },
     ],
   },
