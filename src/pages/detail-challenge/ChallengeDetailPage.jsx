@@ -22,7 +22,7 @@ const ChallengeDetailPage = () => {
 
   return (
     <Wrapper>
-      <TopBar title={"챌린지 상세"}/>
+      <TopBar title={"챌린지 상세정보"}/>
       <ImageMask><Image  src={DefaultImage} /></ImageMask>
       <TabsContainer>
         <Tabs selectedTab={activeTab} onChange={handleChange}>

@@ -12,17 +12,15 @@ export const ContentWrapper = styled.div`
 
 export const NavigateBarLayout = styled.div`
   display: flex;
-  padding: 0.8rem 0;
-  justify-content: space-between;
+  flex-direction: row;
   background-color: #f1f1f1;
 
-  /** 하단 고정 */
-  /* position: fixed; */
-  /* transform: translateY(-100%); */
-  /* width: 100%; */
-  /* bottom: 0; */
-  /* left: 0; */
-  /* height: 3.4375rem; */
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+
+  height: 3.4375rem;
 
   justify-content: center;
   align-items: center;
@@ -30,8 +28,6 @@ export const NavigateBarLayout = styled.div`
 
   border-top: 0.5px solid #bdc5cd;
   background: #fafafa;
-
-  font-size: var(--font-size-lg);
 `;
 
 export const IconContainer = styled.div`
