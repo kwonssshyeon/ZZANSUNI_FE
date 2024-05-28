@@ -62,8 +62,8 @@ export const TabSlider = styled.div`
 
 const inset = keyframes`
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(238, 82, 83, 0);
-            box-shadow: 0 0 0 0 rgba(238, 82, 83, 0);
+    -webkit-box-shadow: 0 0 0 0 rgba(92, 198, 186, 0);
+            box-shadow: 0 0 0 0 rgba(92, 198, 186, 0);
   }
   100% {
     -webkit-box-shadow: 3px 3px 3px rgba(92, 198, 186, 0.5);

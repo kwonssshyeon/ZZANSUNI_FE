@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Tabs, Tab, TabPanel } from "../../components/tab/slide-Tab";
-import Page2 from "./page2";
-import Page1 from "./page1";
+import Ranking from "./ranking/Ranking";
+import Description from "./description/Description";
 import TopBar from "../../components/top-bar/top-Bar"
-
+import DefaultImage from '@/assets/Default-Image.svg';
 import {
   TabsContainer,
   TabPanelContainer,
+  Image,
+  ImageMask,
+  Wrapper,
 } from "./styles";
 
 
@@ -18,8 +21,9 @@ const ChallengeDetailPage = () => {
   };
 
   return (
-    <div>
+    <Wrapper>
       <TopBar title={"챌린지 상세"}/>
+      <ImageMask><Image  src={DefaultImage} /></ImageMask>
       <TabsContainer>
         <Tabs selectedTab={activeTab} onChange={handleChange}>
           <Tab label="챌린지" value={0}></Tab>
@@ -28,13 +32,13 @@ const ChallengeDetailPage = () => {
       </TabsContainer>
       <TabPanelContainer>
         <TabPanel value={activeTab} selectedIndex={0}>
-          <Page1 />
+          <Description />
         </TabPanel>
         <TabPanel value={activeTab} selectedIndex={1}>
-          <Page2 />
+          <Ranking />
         </TabPanel>
       </TabPanelContainer>
-    </div>
+    </Wrapper>
   );
 }
 
