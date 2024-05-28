@@ -70,8 +70,8 @@ export const GlobalStyle = css`
 
     /* 중앙 정렬 및 고정 너비 적용 */
     position: relative;
-    transform: translateX(-50%);
-    left: 50%;
+    // transform: translateX(-50%);
+    // left: 50%;
 
     // 모바일 너비 적용
     @media (min-width: 768px) {
