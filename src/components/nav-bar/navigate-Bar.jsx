@@ -17,36 +17,38 @@ const NavigateBar = ({ children }) => {
 
   return (
     <>
-      {children}
-      <Styles.NavigateBarLayout>
-        <Styles.IconContainer>
-          <Styles.NavIcon
-            onClick={() => handlerNavigate('/challenge')}
-            src={MyChallenge}
-          />
-        </Styles.IconContainer>
-        <Styles.IconContainer>
-          <Styles.NavIcon
-            onClick={() => handlerNavigate('/shorts')}
-            src={ChallengeShorts}
-          />
-        </Styles.IconContainer>
-        <Styles.IconContainer>
-          <Styles.NavIcon onClick={() => handlerNavigate('/')} src={Home} />
-        </Styles.IconContainer>
-        <Styles.IconContainer>
-          <Styles.NavIcon
-            onClick={() => handlerNavigate('/rank')}
-            src={Ranking}
-          />
-        </Styles.IconContainer>
-        <Styles.IconContainer>
-          <Styles.NavIcon
-            onClick={() => handlerNavigate('/dashboard')}
-            src={Dashboard}
-          />
-        </Styles.IconContainer>
-      </Styles.NavigateBarLayout>
+      <Styles.MainContent>
+        <Styles.ContentWrapper>{children}</Styles.ContentWrapper>
+        <Styles.NavigateBarLayout>
+          <Styles.IconContainer>
+            <Styles.NavIcon
+              onClick={() => handlerNavigate('/challenge')}
+              src={MyChallenge}
+            />
+          </Styles.IconContainer>
+          <Styles.IconContainer>
+            <Styles.NavIcon
+              onClick={() => handlerNavigate('/shorts')}
+              src={ChallengeShorts}
+            />
+          </Styles.IconContainer>
+          <Styles.IconContainer>
+            <Styles.NavIcon onClick={() => handlerNavigate('/')} src={Home} />
+          </Styles.IconContainer>
+          <Styles.IconContainer>
+            <Styles.NavIcon
+              onClick={() => handlerNavigate('/rank')}
+              src={Ranking}
+            />
+          </Styles.IconContainer>
+          <Styles.IconContainer>
+            <Styles.NavIcon
+              onClick={() => handlerNavigate('/dashboard')}
+              src={Dashboard}
+            />
+          </Styles.IconContainer>
+        </Styles.NavigateBarLayout>
+      </Styles.MainContent>
     </>
   );
 };

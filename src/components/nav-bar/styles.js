@@ -1,5 +1,15 @@
 import styled from '@emotion/styled';
 
+export const MainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+export const ContentWrapper = styled.div`
+  flex: 1;
+`;
+
 export const NavigateBarLayout = styled.div`
   display: flex;
   flex-direction: row;
@@ -11,6 +21,7 @@ export const NavigateBarLayout = styled.div`
   left: 0;
 
   height: 3.4375rem;
+
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
