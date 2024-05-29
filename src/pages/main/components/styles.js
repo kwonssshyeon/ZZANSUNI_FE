@@ -141,10 +141,11 @@ export const TeerTotal = styled.div`
   display: flex;
   /* width: 21.125rem; */
   margin: 0 1rem;
-  width: 19rem;
+  /* width: 19rem; */
   height: 0.9375rem;
   /* padding-right: 11.8125rem; */
   /* padding: 0 1rem; */
+  /* margin: 0 5rem; */
   align-items: center;
   flex-shrink: 0;
 
