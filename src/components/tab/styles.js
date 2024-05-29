@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { css, keyframes } from 'styled-components';
+import { css, keyframes } from '@emotion/react';
 
 
 export const TabHeaderContainer = styled.div`
