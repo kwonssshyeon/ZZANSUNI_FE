@@ -10,7 +10,8 @@ export const HeaderLayout = styled.div`
   justify-content: space-between;
   text-align: center;
   align-items: center;
-  background-color: ${({ bgColor }) => bgColor || 'var(--color-green-06)'};
+  background-color: ${(props) =>
+    props.BackgroundColor || 'var(--color-green-06)'};
 `;
 
 export const prevbtnContainer = styled.div`
