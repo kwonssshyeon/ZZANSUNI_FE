@@ -1,6 +1,6 @@
-import { css, keyframes } from 'styled-components';
-
 import styled from '@emotion/styled';
+import { css, keyframes } from '@emotion/react';
+
 
 export const TabHeaderContainer = styled.div`
   position: absolute;
@@ -18,8 +18,6 @@ export const StylizedTab = styled.div`
   margin-top: 3px;
   text-align: center;
   line-height: 50px;
-
-  cursor: ${(p) => (p.disabled ? 'default' : 'pointer')};
 
   ${(p) =>
     p.active &&
