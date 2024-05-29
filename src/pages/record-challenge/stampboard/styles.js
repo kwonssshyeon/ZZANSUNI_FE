@@ -47,6 +47,11 @@ export const SubText = styled.div`
     margin-bottom: 15px;
 `
 
+export const SmallText = styled.div`
+    font-size: var(--font-size-xs);
+    margin-bottom: 15px;
+`
+
 
 export const Row = styled.div`
     display: flex;
