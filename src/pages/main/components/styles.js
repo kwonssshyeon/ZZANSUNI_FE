@@ -79,9 +79,11 @@ export const CategoryButtonImage = styled.img`
 `;
 
 export const TeerLayout = styled.div`
-  height: 9.3125rem;
+  /* height: 9.3125rem; */
+  height: ${(props) => props.height || '0'};
+
   flex-shrink: 0;
-  margin: 1rem;
+  margin: 1rem 1rem 3rem 1rem;
   border-radius: 1.25rem;
   border: 1px solid #d4d6dd;
   background: #fff;
@@ -158,4 +160,178 @@ export const TeerCurrent = styled.div`
   padding-left: 0.3125rem;
   border-radius: 0.3125rem;
   background: linear-gradient(90deg, #81633e 0%, #b28854 50%);
+`;
+
+export const StrickLayout = styled.div`
+  height: 17.5rem;
+  flex-shrink: 0;
+  margin: 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid #d4d6dd;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+
+export const StrickInfo = styled.div`
+  margin: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  gap: 0.625rem;
+`;
+
+export const StrickText = styled.div`
+  /* font-size: var(--font-size-xxl); */
+  font-size: ${(props) => props.fs || '1.25rem'};
+  font-weight: ${(props) => props.fw || '1.25rem'};
+  display: flex;
+`;
+
+export const StrickMonthContainer = styled.div`
+  display: inline-flex;
+  padding: 0.3125rem 0.625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  border-radius: 0.4375rem;
+  border: 1px solid var(--green--01, #5cc6ba);
+  background: #fff;
+`;
+
+export const StrickMonthImg = styled.img`
+  width: 0.78125rem;
+  height: 0.4375rem;
+  color: #000;
+`;
+
+export const StrickCalendarLayout = styled.div`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 1rem;
+`;
+
+export const CalendarMonth = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1px;
+`;
+
+export const MonthText = styled.div`
+  color: #b3b3b3;
+  text-align: center;
+  font-family: 'Noto Sans';
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+`;
+
+export const CalenderInfo = styled.div`
+  display: flex;
+  width: 18rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.125rem;
+  /* margin: 0 1rem; */
+  flex-wrap: wrap;
+`;
+
+export const CalenderItem = styled.div`
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  border-radius: 0.3125rem;
+  /* background: #d9d9d9; */
+  background: ${(props) => props.bgColor || '#d9d9d9'};
+`;
+
+export const MonthTextContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 13rem;
+  margin: 1rem 4rem;
+  justify-content: space-between;
+`;
+
+export const MonthTextItem = styled.div`
+  color: #b3b3b3;
+  text-align: center;
+  font-family: 'Noto Sans';
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+`;
+
+export const ReviewLayout = styled.div`
+  display: flex;
+  height: 15.5625rem;
+  padding: 0.9375rem 4.8125rem 0.9375rem 0.8125rem;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 1rem 1rem 1rem 1rem;
+
+  border-radius: 1.25rem;
+  background: var(--green--06, rgba(240, 244, 243, 0.75));
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+
+export const ChallengeLayout = styled.div`
+  width: 18rem;
+  height: 13.6875rem;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: var(--green--01, #5cc6ba);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+
+export const StarContainer = styled.div`
+  display: flex;
+  margin: 0.5rem;
+  gap: 0.2rem;
+`;
+
+export const StarImg = styled.img`
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+`;
+
+export const ReviewProfileContainer = styled.div`
+  display: flex;
+  margin: 1rem 0.5rem;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 5.5rem;
+  align-items: center;
+  gap: 0.25rem;
+`;
+
+export const ReviewProfileImg = styled.img`
+  width: 2rem;
+  border-radius: 6.25rem;
+`;
+
+export const ReviewText = styled.div`
+  color: #fff;
+  text-align: left;
+  font-family: 'Noto Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: ${(props) => props.fw || '400'};
+  line-height: normal;
+`;
+
+export const ReviewContents = styled.div`
+  width: 100%;
+  /* justify-content: left; */
 `;
