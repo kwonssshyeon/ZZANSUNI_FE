@@ -7,7 +7,7 @@ const Teer = () => {
       <Styles.TitleText mgLF='1rem' mgBT='0.5rem'>
         내 티어
       </Styles.TitleText>
-      <Styles.TeerLayout>
+      <Styles.TeerLayout height='9.3125rem' width='21rem'>
         <Styles.InfoContainer>
           <Styles.ImgContainer>
             <Styles.ProfileImg src={ProfileImg} />
