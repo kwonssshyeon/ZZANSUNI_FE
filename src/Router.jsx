@@ -4,10 +4,13 @@ import MyChallenge from './pages/my-challenge/MyChallenge';
 import ShortsChallenge from './pages/shorts-challenge/Shorts-challenge';
 import NavigateBar from '@/components/nav-bar/navigate-Bar';
 import Dashboard from '@/pages/dashboard/Dashboard';
-import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
 import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
 import Rank from '@/pages/rank/Rank';
+import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
+import ChallengeRecordPage from '@/pages/record-challenge/ChallengeRecordPage';
+
+
 
 export const Router = createBrowserRouter([
   {
@@ -47,6 +50,10 @@ export const Router = createBrowserRouter([
       {
         path: 'challenge-detail',
         element: <ChallengeDetailPage />,
+      },
+      {
+        path: 'challenge-record',
+        element: <ChallengeRecordPage />,
       },
     ],
   },
