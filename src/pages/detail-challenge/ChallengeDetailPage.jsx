@@ -22,10 +22,8 @@ const ChallengeDetailPage = () => {
 
   return (
     <Wrapper>
-      <TopBar title={'챌린지 상세'} />
-      <ImageMask>
-        <Image src={DefaultImage} />
-      </ImageMask>
+      <TopBar title={"챌린지 상세정보"}/>
+      <ImageMask><Image  src={DefaultImage} /></ImageMask>
       <TabsContainer>
         <Tabs selectedTab={activeTab} onChange={handleChange}>
           <Tab label='챌린지' value={0}></Tab>
