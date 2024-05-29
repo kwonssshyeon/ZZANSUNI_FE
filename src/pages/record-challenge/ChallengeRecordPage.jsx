@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Tabs, Tab, TabPanel } from "../../components/tab/slide-Tab";
+import Verification from "./verification/Verification";
+import StampBoard from "./stampboard/StampBoard";
 import TopBar from "../../components/top-bar/top-Bar"
 import DefaultImage from '@/assets/Default-Image.svg';
 import {
@@ -27,10 +29,10 @@ const ChallengeRecordPage = () => {
       </TabsContainer>
       <TabPanelContainer>
         <TabPanel value={activeTab} selectedIndex={0}>
-          인증페이지
+          <Verification />
         </TabPanel>
         <TabPanel value={activeTab} selectedIndex={1}>
-          기록페이지
+          <StampBoard />
         </TabPanel>
       </TabPanelContainer>
     </Wrapper>
