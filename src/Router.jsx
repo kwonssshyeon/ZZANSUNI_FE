@@ -11,6 +11,7 @@ import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
 import ChallengeRecordPage from '@/pages/record-challenge/ChallengeRecordPage';
 
 
+
 export const Router = createBrowserRouter([
   {
     path: '/',

@@ -1,11 +1,9 @@
-import * as Styles from './styles';
 import UserItem from '../components/UserItem';
+import * as Styles from './styles';
 
 const Ranking = () => {
-
-
-    return (
-      <>
+  return (
+    <>
       <Styles.Wrapper>
         <Styles.Category>에코</Styles.Category>
         <Styles.Title>길에 떨어진 쓰레기 줍기 챌린지</Styles.Title>
@@ -17,9 +15,8 @@ const Ranking = () => {
         <UserItem></UserItem>
         <UserItem></UserItem>
       </Styles.RankingWrapper>
-      </>
-    );
-  }
-  
-  
+    </>
+  );
+};
+
 export default Ranking;

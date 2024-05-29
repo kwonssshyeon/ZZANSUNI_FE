@@ -1,5 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
-
+import React, { useRef, useEffect, useState } from 'react';
 
 import {
   TabHeaderContainer,
@@ -7,9 +6,8 @@ import {
   StyledTabPanel,
   TabsHolder,
   inactiveTab,
-  TabSlider
-} from "./styles";
-
+  TabSlider,
+} from './styles';
 
 export const Tab = ({ label, active, onClick }) => {
   return (
@@ -41,13 +39,13 @@ export const Tabs = ({ selectedTab, onChange, children }) => {
     return React.cloneElement(child, {
       key: child.props.value,
       active: child.props.value === selectedTab,
-      onClick: handleClick
+      onClick: handleClick,
     });
   });
 
   return (
     <TabHeaderContainer ref={containerRef}>
-      <TabsHolder >{tabs}</TabsHolder>
+      <TabsHolder>{tabs}</TabsHolder>
       <TabSlider width={sliderWidth} index={selectedTab} />
     </TabHeaderContainer>
   );
