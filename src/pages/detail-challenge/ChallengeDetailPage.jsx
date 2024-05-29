@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { Tabs, Tab, TabPanel } from "../../components/tab/slide-Tab";
-import Ranking from "./ranking/Ranking";
-import Description from "./description/Description";
-import TopBar from "../../components/top-bar/top-Bar"
-import DefaultImage from '@/assets/Default-Image.svg';
+import { useState } from 'react';
+
+import { Tabs, Tab, TabPanel } from '../../components/tab/slide-Tab';
+import TopBar from '../../components/top-bar/top-Bar';
+import Description from './description/Description';
+import Ranking from './ranking/Ranking';
 import {
   TabsContainer,
   TabPanelContainer,
   Image,
   ImageMask,
   Wrapper,
-} from "./styles";
-
+} from './styles';
+import DefaultImage from '@/assets/Default-Image.svg';
 
 const ChallengeDetailPage = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -22,12 +22,14 @@ const ChallengeDetailPage = () => {
 
   return (
     <Wrapper>
-      <TopBar title={"챌린지 상세"}/>
-      <ImageMask><Image  src={DefaultImage} /></ImageMask>
+      <TopBar title={'챌린지 상세'} />
+      <ImageMask>
+        <Image src={DefaultImage} />
+      </ImageMask>
       <TabsContainer>
         <Tabs selectedTab={activeTab} onChange={handleChange}>
-          <Tab label="챌린지" value={0}></Tab>
-          <Tab label="랭킹" value={1}></Tab>
+          <Tab label='챌린지' value={0}></Tab>
+          <Tab label='랭킹' value={1}></Tab>
         </Tabs>
       </TabsContainer>
       <TabPanelContainer>
@@ -40,7 +42,6 @@ const ChallengeDetailPage = () => {
       </TabPanelContainer>
     </Wrapper>
   );
-}
-
+};
 
 export default ChallengeDetailPage;

@@ -1,11 +1,10 @@
-import styled from '@emotion/styled';
 import { css, keyframes } from 'styled-components';
 
+import styled from '@emotion/styled';
 
 export const TabHeaderContainer = styled.div`
   position: absolute;
   width: 100%;
-  
 `;
 
 export const StylizedTab = styled.div`
@@ -15,14 +14,13 @@ export const StylizedTab = styled.div`
   font-size: var(--font-size-md);
   background-color: transparent;
   border: none;
-  height : 50px;
+  height: 50px;
   margin-top: 3px;
-  text-align : center;
-  line-height : 50px;
+  text-align: center;
+  line-height: 50px;
 
+  cursor: ${(p) => (p.disabled ? 'default' : 'pointer')};
 
-  cursor: ${(p) => (p.disabled ? "default" : "pointer")};
-  
   ${(p) =>
     p.active &&
     css`
@@ -32,22 +30,16 @@ export const StylizedTab = styled.div`
       animation: ${inset} 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     `}
   ${(p) => !p.active && p.inactiveStyle}
-  
-  
 `;
-
-
 
 export const TabsHolder = styled.div`
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
 `;
 
 export const inactiveTab = {
-  opacity: 0.65
+  opacity: 0.65,
 };
-
-
 
 export const TabSlider = styled.div`
   position: absolute;
@@ -71,10 +63,8 @@ const inset = keyframes`
   }
 `;
 
-
-
 export const StyledTabPanel = styled.div`
-  display: ${(p) => (p.active ? "flex" : "none")};
+  display: ${(p) => (p.active ? 'flex' : 'none')};
   font-size: 2rem;
   flex-direction: column;
   width: 100%;
