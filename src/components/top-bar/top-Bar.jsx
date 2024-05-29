@@ -2,10 +2,10 @@ import React from 'react';
 
 import * as Styles from '../top-bar/styles';
 
-const TopBar = ({title}) => {
+const TopBar = ({ title }) => {
   return (
     <>
-    <Styles.TopBarLayout>{title}</Styles.TopBarLayout>
+      <Styles.TopBarLayout>{title}</Styles.TopBarLayout>
     </>
   );
 };

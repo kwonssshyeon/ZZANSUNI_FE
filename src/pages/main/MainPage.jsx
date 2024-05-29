@@ -1,10 +1,15 @@
-import React from 'react';
+import Category from './components/Category';
+import MainTitle from './components/MainTitle';
+import Teer from './components/Teer';
+import { MainPageLayout } from './style';
 
 const MainPage = () => {
   return (
-    <>
-      <div>메인 페이지</div>
-    </>
+    <MainPageLayout>
+      <MainTitle />
+      <Category />
+      <Teer />
+    </MainPageLayout>
   );
 };
 

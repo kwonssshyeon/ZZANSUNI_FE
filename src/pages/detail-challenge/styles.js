@@ -36,8 +36,7 @@ export const Image = styled.img`
 export const ImageMask = styled.div`
   background-color: var(--color-green-06);
   position: relative;
-  top: 60px
-`
+  top: 60px;
+`;
 
-export const Wrapper = styled.div`
-`
+export const Wrapper = styled.div``;

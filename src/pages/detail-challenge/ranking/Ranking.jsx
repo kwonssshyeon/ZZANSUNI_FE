@@ -2,7 +2,8 @@ import * as Styles from './styles';
 import UserItem from '../components/UserItem';
 
 const Ranking = () => {
-
+  return <div>나는 2 !</div>;
+};
 
     return (
       <>
