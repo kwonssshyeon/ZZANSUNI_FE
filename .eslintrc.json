@@ -29,11 +29,23 @@
   },
   "plugins": ["react-refresh", "jsx-a11y", "import", "prettier"],
   "rules": {
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/jsx-no-useless-fragment": "off",
     "react/jsx-no-target-blank": "off",
+    "spaced-comment": "off",
+    "import/prefer-default-export": "off",
     "react-refresh/only-export-components": [
       "warn",
       { "allowConstantExport": true }
     ],
+    "import/no-unresolved": "off",
+    "arrow-body-style": "off",
     "prettier/prettier": [
       "error",
       {
