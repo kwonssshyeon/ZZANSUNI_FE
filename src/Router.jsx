@@ -37,14 +37,7 @@ export const Router = createBrowserRouter([
             path: 'list',
             element: <ChallengeList />,
           },
-          {
-            path: 'detail',
-            element: <ChallengeDetailPage />,
-          },
-          {
-            path: 'record',
-            element: <ChallengeRecordPage />,
-          },
+          
         ],
       },
       {
@@ -58,6 +51,14 @@ export const Router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <Dashboard />,
+      },
+      {
+        path: 'challenge-detail',
+        element: <ChallengeDetailPage />,
+      },
+      {
+        path: 'challenge-record',
+        element: <ChallengeRecordPage />,
       },
     ],
   },
