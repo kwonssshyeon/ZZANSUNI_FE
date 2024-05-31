@@ -10,7 +10,8 @@ import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
 import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
 import ChallengeRecordPage from '@/pages/record-challenge/ChallengeRecordPage';
-import WritingReview from './pages/review/writingReview/WritingReview';
+import WritingReview from '@/pages/review/writingReview/WritingReview';
+import ReviewList from '@/pages/review/review-list/ReviewList';
 
 export const Router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ export const Router = createBrowserRouter([
       {
         path: 'writing-reivew',
         element: <WritingReview />,
+      },
+      {
+        path: 'reivew-list',
+        element: <ReviewList />,
       },
     ],
   },
