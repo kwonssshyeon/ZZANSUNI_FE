@@ -10,6 +10,7 @@ import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
 import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
 import ChallengeRecordPage from '@/pages/record-challenge/ChallengeRecordPage';
+import WritingReview from './pages/review/writingReview/WritingReview';
 
 export const Router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ export const Router = createBrowserRouter([
       {
         path: 'challenge-record',
         element: <ChallengeRecordPage />,
+      },
+      {
+        path: 'writing-reivew',
+        element: <WritingReview />,
       },
     ],
   },
