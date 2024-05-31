@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 
 import ChallengeList from './pages/list-challenge/list-challenge';
+import RedirectPage from './pages/login/RedirectPage';
 import MyChallenge from './pages/my-challenge/MyChallenge';
 import RankPage from './pages/rank/Rank';
 import ShortsChallenge from './pages/shorts-challenge/Shorts-challenge';
@@ -74,6 +75,16 @@ export const Router = createBrowserRouter([
   },
   {
     path: 'login',
-    element: <LoginPage />,
+    children: [
+      { index: true, element: <LoginPage /> },
+      {
+        path: 'kakao',
+        element: <RedirectPage />,
+      },
+    ],
   },
+  // {
+  //   path: '*',
+  //   element: <div>Not Found</div>,
+  // },
 ]);
