@@ -1,5 +1,5 @@
 import * as Styles from './styles';
-import DefaultImage from '../../../assets/UserImage.svg';
+import DefaultImage from '../../../../assets/UserImage.svg';
 
 const UserItem = ({data}) => {
     return (
