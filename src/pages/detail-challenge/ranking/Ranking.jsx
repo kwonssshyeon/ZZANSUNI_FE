@@ -1,4 +1,4 @@
-import UserItem from '../components/UserItem';
+import UserItem from '../components/userItem/UserItem';
 import * as Styles from './styles';
 
 const Ranking = () => {
