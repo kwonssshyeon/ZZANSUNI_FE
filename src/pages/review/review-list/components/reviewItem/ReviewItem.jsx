@@ -17,9 +17,9 @@ const ReviewItem = () => {
                 <Styles.SmallText>참여난이도 8</Styles.SmallText>
             </Styles.Wrapper>
             <Styles.StarWrapper>
-            {[...Array(rating)].map((i) => (
+            {[...Array(rating)].map((a,i) => (
                 <PiStarFill size='15' key={i} color='var(--color-green-01)'/>))}
-            {[...Array(5 - rating)].map((i) => (
+            {[...Array(5 - rating)].map((a,i) => (
                 <PiStarLight size='15' key={i} color='var(--color-green-01)'/>))}
             </Styles.StarWrapper>
             </Styles.UserWrapper>
