@@ -9,7 +9,6 @@ import Dashboard from '@/pages/dashboard/Dashboard';
 import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
 import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
-import Rank from '@/pages/rank/Rank';
 import ChallengeRecordPage from '@/pages/record-challenge/ChallengeRecordPage';
 
 export const Router = createBrowserRouter([
@@ -28,12 +27,25 @@ export const Router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: 'login',
-        element: <LoginPage />,
-      },
-      {
         path: 'challenge',
-        element: <MyChallenge />,
+        children: [
+          {
+            index: true,
+            element: <MyChallenge />,
+          },
+          {
+            path: 'list',
+            element: <ChallengeList />,
+          },
+          {
+            path: 'detail',
+            element: <ChallengeDetailPage />,
+          },
+          {
+            path: 'record',
+            element: <ChallengeRecordPage />,
+          },
+        ],
       },
       {
         path: 'shorts',
@@ -47,18 +59,10 @@ export const Router = createBrowserRouter([
         path: 'dashboard',
         element: <Dashboard />,
       },
-      {
-        path: 'challengelist',
-        element: <ChallengeList />,
-      },
-      {
-        path: 'challenge-detail',
-        element: <ChallengeDetailPage />,
-      },
-      {
-        path: 'challenge-record',
-        element: <ChallengeRecordPage />,
-      },
     ],
+  },
+  {
+    path: 'login',
+    element: <LoginPage />,
   },
 ]);
