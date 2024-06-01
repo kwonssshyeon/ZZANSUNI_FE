@@ -1,6 +1,8 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 
 import ChallengeList from './pages/list-challenge/list-challenge';
+import ListRecordChallenge from './pages/list-record-challenge/ListRecordChallenge';
+import RedirectPage from './pages/login/RedirectPage';
 import MyChallenge from './pages/my-challenge/MyChallenge';
 import RankPage from './pages/rank/Rank';
 import ShortsChallenge from './pages/shorts-challenge/Shorts-challenge';
@@ -10,8 +12,8 @@ import ChallengeDetailPage from '@/pages/detail-challenge/ChallengeDetailPage';
 import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
 import ChallengeRecordPage from '@/pages/record-challenge/ChallengeRecordPage';
-import WritingReview from '@/pages/review/writingReview/WritingReview';
 import ReviewList from '@/pages/review/review-list/ReviewList';
+import WritingReview from '@/pages/review/writingReview/WritingReview';
 
 export const Router = createBrowserRouter([
   {
@@ -39,7 +41,10 @@ export const Router = createBrowserRouter([
             path: 'list',
             element: <ChallengeList />,
           },
-          
+          {
+            path: 'record-list',
+            element: <ListRecordChallenge />,
+          },
         ],
       },
       {
@@ -74,6 +79,16 @@ export const Router = createBrowserRouter([
   },
   {
     path: 'login',
-    element: <LoginPage />,
+    children: [
+      { index: true, element: <LoginPage /> },
+      {
+        path: 'kakao',
+        element: <RedirectPage />,
+      },
+    ],
   },
+  // {
+  //   path: '*',
+  //   element: <div>Not Found</div>,
+  // },
 ]);
