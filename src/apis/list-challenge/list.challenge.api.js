@@ -1,7 +1,7 @@
 import { axiosClient } from '../AxiosClient';
 
 // 카테고리 버튼 눌렀을때 -> 해당 페이지 호출
-export async function getChallengeList(page, size, category = 'ECHO') {
+export async function getChallengeList(page, size, category) {
   try {
     const response = await axiosClient.get(`/api/challengeGroups`, {
       params: { page, size, category },
