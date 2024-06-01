@@ -3,7 +3,6 @@ import { Tabs, Tab, TabPanel } from "../../components/tab/slide-Tab";
 import Verification from "./verification/Verification";
 import StampBoard from "./stampboard/StampBoard";
 import TopBar from "../../components/top-bar/top-Bar"
-import DefaultImage from '@/assets/Default-Image.svg';
 import {
   TabsContainer,
   TabPanelContainer,
