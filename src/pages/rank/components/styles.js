@@ -11,8 +11,10 @@ export const RankInfoContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-between; */
-  padding: 1rem 0;
+
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 1rem 0.5rem;
 `;
 
 export const RankProfile = styled.div`
@@ -35,12 +37,18 @@ export const TextContainer = styled.div`
   margin-right: ${(props) => props.marginRight || '0.5rem'};
 `;
 
+export const RankPosition = styled.div`
+  flex-shrink: 0;
+  width: 3rem;
+  text-align: center;
+  white-space: nowrap;
+`;
+
 export const AllRankLayout = styled.div`
   display: flex;
   margin: 1rem 0;
   flex-direction: column;
   background-color: var(--color-green-06);
-  border-bottom: 1px solid #bdc5cd;
 `;
 
 export const HighRankContainer = styled.div`
@@ -101,13 +109,16 @@ export const CurrentTeerGrpah = styled.div`
   padding: 0 1rem;
   height: 0.3125rem;
   border-radius: 0.125rem;
-  background: linear-gradient(90deg, #81633e 0%, #b28854 50%);
+  /* background: linear-gradient(90deg, #81633e 0%, #b28854 50%); */
+  background: ${(props) =>
+    `linear-gradient(45deg, #4e4e4e 0%, ${props.background} 50%)` ||
+    'linear-gradient(90deg, #81633e 0%, #b28854 50%)'};
 `;
 
 export const AllRankContainer = styled.div`
   display: flex;
-  height: 20.875rem;
-  padding: 0.625rem;
+  /* height: 20.875rem; */
+  padding: 1rem 1rem;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
@@ -118,11 +129,14 @@ export const AllRankContainer = styled.div`
 
 export const UserRankContainer = styled.div`
   display: flex;
-  width: 20rem;
-  margin: 0 2.5rem 0 2rem;
-  padding: 0.46875rem 0rem 0.46875rem 0.625rem;
+  width: 100%;
+  /* margin: 0 1.5rem 0 1rem; */
+  /* padding: 0.46875rem 0rem 0.46875rem 0.625rem; */
+  padding: 0.5rem 0;
   justify-content: space-between;
+  gap: 5px;
   align-items: center;
+  text-align: center;
   border-bottom: 1px solid #d9d9d9;
   background: #fff;
 `;
@@ -134,4 +148,20 @@ export const Container = styled.div`
   text-align: center;
   flex-direction: row;
   gap: 1rem;
+`;
+
+export const Wapper = styled.div`
+  display: flex;
+  /* width: 10rem; */
+`;
+
+export const Text = styled.span`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* max-width: 150px; */
+  color: ${(props) => props.color || 'black'};
+  max-width: ${(props) => props.max};
+  font-size: ${(props) => props.fs};
+  font-weight: ${(props) => props.fw};
 `;
