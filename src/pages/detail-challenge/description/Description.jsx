@@ -2,21 +2,21 @@ import * as Styles from './styles';
 import Difficulty from '../components/difficulty/Difficulty';
 
 const Description = ({data}) => {
-
+  const challenges = data.challenges;
 
   return (
     <Styles.Wrapper>
-      <Styles.Category>에코</Styles.Category>
-      <Styles.Title>길에 떨어진 쓰레기 줍기 챌린지</Styles.Title>
-      <Styles.Text>길에 떨어진 쓰레기를 주워 우리동네를 깨끗하게 만드는 챌린지입니다.</Styles.Text>
+      <Styles.Category>{data.category}</Styles.Category>
+      <Styles.Title>{data.title}</Styles.Title>
+      <Styles.Text>{data.content}</Styles.Text>
       <div style={{margin: '5px'}}/>
         <Styles.ContentWrapper>
           <Styles.BoldText>시작일</Styles.BoldText>
-          <Styles.Text>2024.5.25</Styles.Text>
+          <Styles.Text>{data.startDate}</Styles.Text>
         </Styles.ContentWrapper>
         <Styles.ContentWrapper>
           <Styles.BoldText>종료일</Styles.BoldText>
-          <Styles.Text>2024.5.25</Styles.Text>
+          <Styles.Text>{data.endDate}</Styles.Text>
         </Styles.ContentWrapper>
       <Styles.Line />
       <Styles.BoldText>참여방법</Styles.BoldText>
@@ -25,11 +25,9 @@ const Description = ({data}) => {
           3. 다른 사람에게 공유하기: 쓰레기 줍기 챌린지에 참여한 후에는 친구, 가족 또는 동료에게 도전을 넘겨 다음 참여자를 유도합니다. <br/></Styles.Text>
       <Styles.RowList>
         <div style={{margin: '5px'}}/>
-        <Difficulty />
-        <Difficulty />
-        <Difficulty />
-        <Difficulty />
-        <Difficulty />
+        {challenges.map((item) =>(
+            <Difficulty key={item.id} props={item} max={data.maxDifficulty}/>
+        ))}
         <div style={{margin: '5px'}}/>
       </Styles.RowList>
       
