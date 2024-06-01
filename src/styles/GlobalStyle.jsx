@@ -24,9 +24,9 @@ const colorClass01 = '#C0C0C0C0';
 const colorClass02 = '#B28753';
 const colorClass03 = '#74A3D1';
 const colorClass04 = '#D6B534';
-const colorClass05 = '#861A22';
-const colorClass06 = '#462679';
-const colorClass07 = '#069729';
+const colorClass05 = '#E3242B';
+const colorClass06 = '#8B00FF';
+const colorClass07 = '#009000';
 
 export const GlobalStyle = css`
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
