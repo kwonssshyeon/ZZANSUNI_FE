@@ -101,7 +101,7 @@ export const TeerText = styled.div`
 `;
 
 export const TeerTextItem = styled.div`
-  color: var(--color-class-02);
+  color: ${(props) => props.color || 'var(--color-class-02)'};
   font-family: 'Noto Sans';
   font-weight: ${(props) => props.fw || '1rem'};
 `;
