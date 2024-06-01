@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useUserInfoStore } from '../../store/useUserInfoStore';
 // import { UserDummy } from '../../constants/Dummy';
-import { getTierDetails } from '@/constants/TierInfo';
+import { getTierDetails } from '@/constants/TierSchema';
 
 const UserDummy = {
   result: 'SUCCESS',
