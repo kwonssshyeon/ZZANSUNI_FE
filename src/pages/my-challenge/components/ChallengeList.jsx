@@ -1,26 +1,30 @@
+import React from 'react';
+
 import * as Styles from './styles';
 import FinishStamp from '@/assets/challenge/ZZAN-Black.png';
 
-const ChallengeList = ({ BackgroundColor, color, BorderColor }) => {
+const ChallengeList = ({ BackgroundColor, color, BorderColor, challenges }) => {
   return (
     <>
       <Styles.ChallengeListLayout>
-        <Styles.ChallengeContainer>
-          <Styles.ChallengeImgContainer>
-            <Styles.ChallengeImg src={FinishStamp} />
-          </Styles.ChallengeImgContainer>
+        {challenges.map((challenge) => (
+          <Styles.ChallengeContainer key={challenge.id}>
+            <Styles.ChallengeImgContainer>
+              <Styles.ChallengeImg src={FinishStamp} />
+            </Styles.ChallengeImgContainer>
 
-          <Styles.ChallengeInfoContainer>
-            <Styles.ChallengeName>쓰레기 줍기 ...</Styles.ChallengeName>
-          </Styles.ChallengeInfoContainer>
+            <Styles.ChallengeInfoContainer>
+              <Styles.ChallengeName>{challenge.title}</Styles.ChallengeName>
+            </Styles.ChallengeInfoContainer>
 
-          <Styles.ReviewContainer
-            BackgroundColor={BackgroundColor}
-            BorderColor={BorderColor}
-          >
-            <Styles.ReviewText color={color}>리뷰 쓰기</Styles.ReviewText>
-          </Styles.ReviewContainer>
-        </Styles.ChallengeContainer>
+            <Styles.ReviewContainer
+              BackgroundColor={BackgroundColor}
+              BorderColor={BorderColor}
+            >
+              <Styles.ReviewText color={color}>리뷰 쓰기</Styles.ReviewText>
+            </Styles.ReviewContainer>
+          </Styles.ChallengeContainer>
+        ))}
         <Styles.ChallengeBarContainer>
           <Styles.ChallengeBar>
             <Styles.ChallengeBarFill />
