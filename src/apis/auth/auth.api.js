@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import { BASE_URI } from '../../constants/URI';
 
-export const AuthAPI = (code) => {
+export const AuthAPI = (code, provider, state) => {
   const navigate = useNavigate();
 
   // 인가 코드 받아서 토큰 요청
@@ -17,8 +17,8 @@ export const AuthAPI = (code) => {
         // .post(`${BASE_URI}/oauth2?code=${code}`, {
         .post(`${BASE_URI}/api/auth/oauth2`, { provider, code, state })
         .then((res) => {
-          const accessToken = res.headers.authorization;
-          console.log(accessToken);
+          const accessToken = res.data.data.accessToken;
+          // console.log(accessToken);
 
           // 로컬 스토리지에 토큰 저장
           localStorage.setItem('accessToken', accessToken);

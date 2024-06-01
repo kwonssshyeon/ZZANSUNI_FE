@@ -1,7 +1,10 @@
-import { getTierDetails } from '../../../constants/TierSchema';
+import { useState } from 'react';
+
 import { TeerCurrent, TeerTotal } from '../../main/components/styles';
 import * as Styles from './Styles';
 import ProfileImg from '@/assets/main/ZZAN-Profile.png';
+import UpdateNicknameModal from '@/components/modal/UpdateNicknameModal';
+import { getTierDetails } from '@/constants/TierSchema';
 import { useUserInfoStore } from '@/store/useUserInfoStore';
 
 const UserInfo = () => {
@@ -9,7 +12,16 @@ const UserInfo = () => {
   const tierDetails = userTier
     ? getTierDetails(userTier)
     : { color: 'var(--color-class-02)' };
-  console.log(tierDetails.color);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <>
@@ -21,9 +33,10 @@ const UserInfo = () => {
           <Styles.ProfileImg src={ProfileImg} />
           <Styles.ProfileInfoContainer>
             <Styles.ProfileInfoText>{userNickname}</Styles.ProfileInfoText>
-            {/* <Styles.Bar /> */}
             <Styles.editBtnContainer>
-              <Styles.EditBtn>수정하기</Styles.EditBtn>
+              <Styles.EditBtn onClick={handleOpenModal}>
+                수정하기
+              </Styles.EditBtn>
             </Styles.editBtnContainer>
           </Styles.ProfileInfoContainer>
         </Styles.ProfileContainer>
@@ -39,6 +52,11 @@ const UserInfo = () => {
           <TeerCurrent background={tierDetails.color} />
         </TeerTotal>
       </Styles.DashBoardContainer>
+      <UpdateNicknameModal
+        isOpen={isModalOpen}
+        onRequestClose={handleCloseModal}
+        currentNickname={userNickname}
+      />
     </>
   );
 };

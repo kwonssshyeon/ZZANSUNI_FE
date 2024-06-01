@@ -1,29 +1,14 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { TierInfo } from '../../../components/userInfo/TierInfo';
-import { getTierDetails } from '../../../constants/TierSchema';
-import { useUserInfoStore } from '../../../store/useUserInfoStore';
 import * as Styles from './styles';
+import { getUserInfo } from '@/apis/user/user.api';
 import ProfileImg from '@/assets/main/ZZAN-Profile.png';
-
-const UserDummy = {
-  result: 'SUCCESS',
-  data: {
-    id: 1,
-    nickname: '박짠짠',
-    profileImageUrl: 'https://example.com/profile.jpg',
-    email: 'john.doe@example.com',
-    tierInfo: {
-      tier: '성골 I',
-      totalExp: 1200,
-      currentExp: 200,
-    },
-  },
-  message: 'Operation completed successfully',
-  errorCode: '',
-};
+import { getTierDetails } from '@/constants/TierSchema';
+import { useUserInfoStore } from '@/store/useUserInfoStore';
 
 const Teer = () => {
+  const [userInfo, setUserInfo] = useState([]);
   const {
     setUserId,
     setUserNickname,
@@ -33,20 +18,26 @@ const Teer = () => {
     setUserTotalExp,
     setUserCurrentExp,
     userNickname,
-    userEmail,
     userTier,
-    userTotalExp,
     userCurrentExp,
   } = useUserInfoStore();
 
-  useEffect(() => {
-    setUserId(UserDummy.data.id);
-    setUserNickname(UserDummy.data.nickname);
-    setUserProfileImageUrl(UserDummy.data.profileImageUrl);
-    setUserEmail(UserDummy.data.email);
-    setUserTier(UserDummy.data.tierInfo.tier);
-    setUserTotalExp(UserDummy.data.tierInfo.totalExp);
-    setUserCurrentExp(UserDummy.data.tierInfo.currentExp);
+  const fetchUserInfo = useCallback(async () => {
+    try {
+      const response = await getUserInfo();
+      const data = response.data;
+      setUserInfo(data);
+      // Assuming setting store state is necessary here
+      setUserId(data.id);
+      setUserNickname(data.nickname);
+      setUserProfileImageUrl(data.profileImageUrl);
+      setUserEmail(data.email);
+      setUserTier(data.tierInfo.tier);
+      setUserTotalExp(data.tierInfo.totalExp);
+      setUserCurrentExp(data.tierInfo.currentExp);
+    } catch (error) {
+      console.error('fetchUserInfo error: ', error);
+    }
   }, [
     setUserId,
     setUserNickname,
@@ -56,19 +47,22 @@ const Teer = () => {
     setUserTotalExp,
     setUserCurrentExp,
   ]);
-  // const { UserNickname } = useUserInfoStore();
-  // const tierDetails = getTierDetails(userTier);
+
+  useEffect(() => {
+    fetchUserInfo();
+  }, [fetchUserInfo]);
+
   const tierDetails = userTier
     ? getTierDetails(userTier)
     : { color: 'var(--color-class-02)' };
-  console.log(tierDetails.color);
+
+  console.log(userTier);
   return (
     <>
       <Styles.TitleText mgLF='1rem' mgBT='0.5rem'>
         내 티어
       </Styles.TitleText>
       <Styles.TeerLayout height='9.3125rem' width='21rem'>
-        {/* <TierInfo /> */}
         <Styles.InfoContainer>
           <Styles.ImgContainer>
             <Styles.ProfileImg src={ProfileImg} />
@@ -77,7 +71,7 @@ const Teer = () => {
             <Styles.TitleText>{userNickname}</Styles.TitleText>
             <Styles.TextContainer>
               <Styles.TextItem color={tierDetails.color} fw='700'>
-                {UserDummy.data.tierInfo.tier}
+                {userTier}
               </Styles.TextItem>
               <Styles.TextItem color={tierDetails.color}>
                 {userCurrentExp}

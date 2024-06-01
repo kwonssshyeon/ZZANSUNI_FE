@@ -5,7 +5,6 @@ import HighRank from './HighRank';
 import UserRank from './UserRank';
 import * as Styles from './styles';
 import { getUserRanking } from '@/apis/rank/rank.api';
-import UserDummy from '@/constants/Dummy.js';
 
 const AllRank = () => {
   const [userRanks, setUserRanks] = useState([]);
