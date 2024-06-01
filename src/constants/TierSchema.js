@@ -139,7 +139,7 @@ export const tierGroups = [
   },
   {
     group: '에코',
-    color: 'var(--color-class-06)',
+    color: 'var(--color-class-07)',
     // exp gap : 350
     tiers: [
       {
