@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TopBar from '../../../components/top-bar/top-Bar';
 import * as Styles from './styles';
 import { PiStarFill, PiStarLight } from "react-icons/pi";
+import { postReview } from '../../../apis/review/review.challenge.api';
 
 const WritingReview = () => {
     const Item1 = ["어려워요", "적당해요","쉬워요"];
@@ -10,6 +11,7 @@ const WritingReview = () => {
     const [rating, setRating] = useState(0);
     const [selectedItem1, setSelectedItem1] = useState(null);
     const [selectedItem2, setSelectedItem2] = useState(null);
+    const [text, setText] = useState('');
 
     const handleItem1Click = (item) => {
         setSelectedItem1(item);
@@ -17,6 +19,12 @@ const WritingReview = () => {
     const handleItem2Click = (item) => {
         setSelectedItem2(item);
     };
+
+    const saveHandler = () =>{
+        postReview(9, text, rating).then((res)=>{
+            console.log("응답: ",res);
+        })
+    }
 
     
 
@@ -53,8 +61,13 @@ const WritingReview = () => {
             </Styles.RowWrapper>
             <Styles.Margin />
             <Styles.BoldText>리뷰 쓰기</Styles.BoldText>
-            <Styles.InputArea placeholder="챌린지 후 느낀점을 적어주세요"></Styles.InputArea>
-            <Styles.Btn>등록하기</Styles.Btn>
+            <Styles.InputArea 
+                type="text" 
+                placeholder="챌린지 후 느낀점을 적어주세요"
+                value={text}
+                onChange={(e)=>setText(e.target.value)} >
+            </Styles.InputArea>
+            <Styles.Btn onClick={saveHandler}>등록하기</Styles.Btn>
         </Styles.Wrapper>
     );
 }
