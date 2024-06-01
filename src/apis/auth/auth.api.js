@@ -18,7 +18,7 @@ export const AuthAPI = (code, provider, state) => {
         .post(`${BASE_URI}/api/auth/oauth2`, { provider, code, state })
         .then((res) => {
           const accessToken = res.data.data.accessToken;
-          console.log(accessToken);
+          // console.log(accessToken);
 
           // 로컬 스토리지에 토큰 저장
           localStorage.setItem('accessToken', accessToken);
