@@ -11,17 +11,13 @@ import {
 
 export const Tab = ({ label, active, onClick }) => {
   return (
-    <StylizedTab
-      active={active}
-      onClick={onClick}
-      inactiveStyle={inactiveTab}
-    >
+    <StylizedTab active={active} onClick={onClick} inactiveStyle={inactiveTab}>
       {label}
     </StylizedTab>
   );
 };
 
-export const Tabs = ({ selectedTab, onChange, children }) => {
+export const Tabs = ({ selectedTab, onChange, children, position }) => {
   const containerRef = useRef(null);
   const [containerWidth, setContainerWidth] = useState(0);
 
@@ -44,7 +40,7 @@ export const Tabs = ({ selectedTab, onChange, children }) => {
   });
 
   return (
-    <TabHeaderContainer ref={containerRef}>
+    <TabHeaderContainer position={position} ref={containerRef}>
       <TabsHolder>{tabs}</TabsHolder>
       <TabSlider width={sliderWidth} index={selectedTab} />
     </TabHeaderContainer>
