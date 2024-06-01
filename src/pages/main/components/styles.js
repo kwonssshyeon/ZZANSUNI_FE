@@ -6,7 +6,7 @@ export const TitleLayout = styled.div`
   text-align: center;
   flex-direction: row;
   margin: 1rem 0.5rem 1rem 0.5rem;
-
+  cursor: pointer;
   gap: 1rem;
 `;
 
@@ -22,7 +22,8 @@ export const TitleLogo = styled.img`
 `;
 
 export const TitleText = styled.div`
-  font-size: var(--font-size-xxl);
+  /* font-size: var(--font-size-xxl); */
+  font-size: ${(props) => props.fs || '1.25rem'};
   font-weight: bold;
   margin-top: ${(props) => props.mgTP || '0'};
   margin-left: ${(props) => props.mgLF || '0'};
