@@ -1,0 +1,31 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks", "jsx-a11y", "import", "prettier"],
+  "rules": {
+    "no-param-reassign": ["error", { "props": false }],
+    "import/no-unresolved": "off",
+    "react/prop-types": "off",
+    "prettier/prettier": [
+      "off",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react/react-in-jsx-scope": "off"
+  }
+}
