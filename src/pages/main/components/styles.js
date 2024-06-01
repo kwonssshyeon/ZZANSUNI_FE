@@ -129,7 +129,7 @@ export const TextContainer = styled.div`
 `;
 
 export const TextItem = styled.div`
-  color: var(--color-class-02);
+  color: ${(props) => props.color || 'var(--color-class-02)'};
   font-family: 'Noto Sans';
   font-size: 1rem;
   font-style: normal;
@@ -160,7 +160,10 @@ export const TeerCurrent = styled.div`
   flex-shrink: 0;
   padding-left: 0.3125rem;
   border-radius: 0.3125rem;
-  background: linear-gradient(90deg, #81633e 0%, #b28854 50%);
+  /* background: linear-gradient(90deg, #81633e 0%, #b28854 50%); */
+  background: ${(props) =>
+    `linear-gradient(45deg, #4e4e4e 0%, ${props.background} 50%)` ||
+    'linear-gradient(90deg, #81633e 0%, #b28854 50%)'};
 `;
 
 export const StrickLayout = styled.div`
