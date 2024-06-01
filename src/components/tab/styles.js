@@ -1,9 +1,9 @@
-import styled from '@emotion/styled';
 import { css, keyframes } from '@emotion/react';
-
+import styled from '@emotion/styled';
 
 export const TabHeaderContainer = styled.div`
-  position: absolute;
+  /* position: absolute; */
+  position: ${(props) => props.position || 'absolute'};
   width: 100%;
 `;
 

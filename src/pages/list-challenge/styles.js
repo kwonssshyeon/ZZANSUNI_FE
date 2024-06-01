@@ -38,8 +38,10 @@ export const ChallengeListContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 1.25rem;
-  background: var(--green--06, #f0f4f3);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  /* background: var(--green--06, #f0f4f3); */
+  background: #fff;
+  border: 1px solid var(--color-green-03);
+  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
 `;
 
 export const ChallengeListContents = styled.div`
