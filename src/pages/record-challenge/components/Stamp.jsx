@@ -5,7 +5,9 @@ import StampInActive from '../../../assets/StampInactive.svg';
 
 const Stamp = ({data}) => {
     return (
-        <Styles.Stamp src ={StampActive}/>
+        <>
+        {data===-1 ? <Styles.Stamp src ={StampInActive}/>:<Styles.Stamp src ={StampActive}/>}
+        </>
     );
 }
 
