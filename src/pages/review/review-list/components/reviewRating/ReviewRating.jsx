@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import * as Styles from './styles';
+import { getChallegeAvgScore } from '../../../../../apis/review/review.challenge.api';
 
 
 const ReviewRating = ({props}) => {
-    const starAvg = 4.5;
-    const ratingToPercent = {
-        width: `${(starAvg/5)*100}%`,
-    }
+    const [datas, setDatas] = useState(null);
+    const [starAvg,setStarAvg] = useState(0);
+    const [ratingToPercent,setRatingToPercent] = useState({width: `${(starAvg/5)*100}%`});
+    
+
+    useEffect(() => {
+        getChallegeAvgScore(1).then((res) => {
+            setDatas(res.ratingCount);
+            console.log("ddd",res.ratingCount);
+            setStarAvg(res.averageRating);
+            setRatingToPercent({width: `${(res.averageRating/5)*100}%`})
+        })}, []);
     
     return (
+        <>
+        {datas ?
         <Styles.StarWrapper>
             <Styles.CWrapper style={{alignItems: 'center'}}>
-                <Styles.Num>4.5</Styles.Num>
+                <Styles.Num>{starAvg}</Styles.Num>
                 <Styles.StarRating>
                     <Styles.StarFill style={ratingToPercent}>
                         <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
@@ -31,21 +42,24 @@ const ReviewRating = ({props}) => {
                     <Styles.SubText>매우 별로</Styles.SubText>
                 </Styles.CWrapper>
                 <Styles.CWrapper>
-                    <Styles.Bar percentage={'40%'} />
-                    <Styles.Bar percentage={'40%'} />
-                    <Styles.Bar percentage={'40%'} />
-                    <Styles.Bar percentage={'40%'} />
-                    <Styles.Bar percentage={'40%'} />
+                    <Styles.Bar percentage={`${datas[1]*100}%`} />
+                    <Styles.Bar percentage={`${datas[2]*100}%`} />
+                    <Styles.Bar percentage={`${datas[3]*100}%`} />
+                    <Styles.Bar percentage={`${datas[4]*100}%`} />
+                    <Styles.Bar percentage={`${datas[5]*100}%`} />
                 </Styles.CWrapper>
                 <Styles.CWrapper>
-                    <Styles.SubText>10</Styles.SubText>
-                    <Styles.SubText>10</Styles.SubText>
-                    <Styles.SubText>10</Styles.SubText>
-                    <Styles.SubText>10</Styles.SubText>
-                    <Styles.SubText>10</Styles.SubText>
+                    <Styles.SubText>{datas[1]}</Styles.SubText>
+                    <Styles.SubText>{datas[2]}</Styles.SubText>
+                    <Styles.SubText>{datas[3]}</Styles.SubText>
+                    <Styles.SubText>{datas[4]}</Styles.SubText>
+                    <Styles.SubText>{datas[5]}</Styles.SubText>
                 </Styles.CWrapper>
             </Styles.RWrapper>
         </Styles.StarWrapper>
+        :<div/>
+        }
+        </>
     );
 }
 
