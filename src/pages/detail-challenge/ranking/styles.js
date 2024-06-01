@@ -25,7 +25,7 @@ export const Text = styled.div`
 export const RankingWrapper = styled.div`
     margin: 30px;
     margin-top: 0px;
-    margin-bottom: 80px;
+    margin-bottom: 55px;
     display: flex;
     flex-direction: column;
 `;

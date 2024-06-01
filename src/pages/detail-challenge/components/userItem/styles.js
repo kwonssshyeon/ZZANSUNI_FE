@@ -51,9 +51,15 @@ export const Line = styled.div`
     margin: 10px 0px;
 `
 
-export const Image = styled.img`
+export const ImageBox = styled.div`
   height: 40px;
-  width: 40px
-  border-radius: 40px;
+  width: 40px;
+  border-radius: 70%;
+  overflow: hidden;
+`
+
+export const Image = styled.img`
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 `;
