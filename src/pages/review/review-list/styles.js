@@ -19,7 +19,7 @@ export const List = styled.div`
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 3rem;
 `;
 
 export const VLine = styled.div`
