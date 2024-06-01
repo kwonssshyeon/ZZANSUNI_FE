@@ -9,11 +9,12 @@ import Header from '@/components/header/Header';
 
 const ChallengeList = () => {
   const [listChallenges, setListChallenges] = useState([]);
+  const [category, setCategory] = useState('ECHO');
 
   useEffect(() => {
     const fetchChallenges = async () => {
       try {
-        const challenges = await getChallengeList(0, 10); // Example: fetch the first page with 10 items
+        const challenges = await getChallengeList(0, 10, category);
         setListChallenges(challenges.data.data);
         console.log(listChallenges);
       } catch (error) {
@@ -22,13 +23,17 @@ const ChallengeList = () => {
     };
 
     fetchChallenges();
-  }, []);
+  }, [category]);
+
+  const handleCategoryChange = (newCategory) => {
+    setCategory(newCategory);
+  };
 
   return (
     <>
       <Header title='챌린지 목록' BackgroundColor='#fff' />
       <Styles.ChallengeListLayout>
-        <CategoryButton />
+        <CategoryButton onCategoryChange={handleCategoryChange} />
         {listChallenges.length > 0 ? (
           listChallenges.map((challenge) => (
             <Contents key={challenge.id} challenge={challenge} />

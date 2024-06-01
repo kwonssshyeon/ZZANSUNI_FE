@@ -4,7 +4,8 @@ import styled from '@emotion/styled';
 
 export const TabsContainer = styled.div`
   display: flex;
-  position: relative;
+  position: ${(props) => props.position || 'relative'};
+  /* position: relative; */
   top: 50px;
   align-self: center;
   width: 90%;
@@ -22,5 +23,4 @@ export const TabPanelContainer = styled.div`
   text-align: center;
 `;
 
-export const Wrapper = styled.div`
-`
+export const Wrapper = styled.div``;
