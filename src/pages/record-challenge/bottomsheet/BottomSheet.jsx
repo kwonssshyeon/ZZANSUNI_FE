@@ -9,6 +9,7 @@ const BottomSheet = ({ data , isOpen, onDragEnd}) => {
     return null;
   }
   return (
+    <S.Outer>
     <S.Wrapper
       drag="y"
       onDragEnd={onDragEnd}
@@ -32,6 +33,7 @@ const BottomSheet = ({ data , isOpen, onDragEnd}) => {
           <S.Image src={data.imageUrl}/>
       </S.ContentWrapper>
     </S.Wrapper>
+    </S.Outer>
   );
 };
 

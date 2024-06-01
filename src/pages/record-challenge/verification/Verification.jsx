@@ -1,19 +1,24 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as Styles from './styles';
 import { postVerification } from '../../../apis/record-challenge/verification';
-
 
 const Verification = () => {
     const fileInput = React.useRef(null);
     const [previewImg, setPreviewImg] = useState();
     const [text, setText] = useState('');
-    
-
+    const navigate = useNavigate();
 
     const saveHandler = () =>{
-        postVerification(1, previewImg, text).then((res)=>{
+        postVerification(18, previewImg, text).then((res)=>{
             console.log("응답: ",res);
-        })
+            alert("성공적으로 저장했습니다.");
+            navigate("/"); 
+        }).catch(()=>{
+            alert("저장에 실패했습니다.");
+            navigate("/"); 
+        });
+        
     }
 
 
@@ -56,6 +61,7 @@ const Verification = () => {
             </Styles.AddImageBtn>}
             {previewImg &&<Styles.Image src={previewImg} />}
             <Styles.Btn onClick={saveHandler}>참여하기</Styles.Btn>
+
         </Styles.Wrapper>
     );
 }

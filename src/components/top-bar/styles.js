@@ -18,3 +18,25 @@ export const TopBarLayout = styled.div`
   font-size: var(--font-size-lg);
   font-weight: bold;
 `;
+
+
+export const prevbtnContainer = styled.div`
+  position: fixed;
+  top: 15px;
+  left: 8px;
+  display: flex;
+  width: 2.0625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-shrink: 0;
+  align-self: stretch;
+  border-radius: 0.625rem;
+  z-index: 10;
+`;
+
+export const prevbtn = styled.img`
+  width: 0.83744rem;
+  height: 1.45488rem;
+  flex-shrink: 0;
+`;

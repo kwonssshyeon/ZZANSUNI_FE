@@ -1,0 +1,37 @@
+.modalContainer{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column;
+  text-align: center;
+}
+
+
+.textInfo {
+  position: fixed;
+  top: 30%;
+  left: 0;
+  right: 0;
+  font-size: var(--font-size-md);
+}
+
+
+.btnsWrap{
+  position: fixed;
+  bottom: 0;
+  height: 45px;
+  width: 80%;
+  align-items: center;
+}
+
+.btn{
+  height: 35px;
+  width: 100%;
+  font-weight: 600;
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-green);
+}

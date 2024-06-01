@@ -3,10 +3,13 @@ import TopBar from '../../../components/top-bar/top-Bar';
 import * as Styles from './styles';
 import { PiStarFill, PiStarLight } from "react-icons/pi";
 import { postReview } from '../../../apis/review/review.challenge.api';
+import { useNavigate } from "react-router-dom";
+
 
 const WritingReview = () => {
     const Item1 = ["어려워요", "적당해요","쉬워요"];
     const Item2 = ["뿌듯해요", "유익해요","애매해요"];
+    const navigate = useNavigate();
     
     const [rating, setRating] = useState(0);
     const [selectedItem1, setSelectedItem1] = useState(null);
@@ -23,7 +26,12 @@ const WritingReview = () => {
     const saveHandler = () =>{
         postReview(9, text, rating).then((res)=>{
             console.log("응답: ",res);
-        })
+            alert("성공적으로 저장했습니다.");
+            navigate("/"); 
+        }).catch(()=>{
+            alert("저장에 실패했습니다.");
+            navigate("/"); 
+        });
     }
 
     

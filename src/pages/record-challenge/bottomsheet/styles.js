@@ -3,7 +3,22 @@ import { motion } from "framer-motion";
 
 const BOTTOM_SHEET_HEIGHT = window.innerHeight;
 
+
+export const Outer = styled.div`
+position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+`
+
 export const Wrapper = styled(motion.div)`
+  z-index: 101;
   flex-direction: column;
   position: fixed;
   z-index: 10;
@@ -23,6 +38,7 @@ export const Wrapper = styled(motion.div)`
 `;
 
 export const HeaderWrapper = styled(motion.div)`
+  z-index: 102;
   height: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -35,6 +51,7 @@ export const HeaderWrapper = styled(motion.div)`
 `;
 
 export const HandleBar = styled(motion.div)`
+  z-index: 103;
   position: absolute;
   left: 50%;
   margin-left: -16px;
