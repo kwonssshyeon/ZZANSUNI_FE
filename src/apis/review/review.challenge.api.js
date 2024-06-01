@@ -25,3 +25,14 @@ export async function postReview(id,content,rating) {
     throw new Error('postReview error: ', error);
   }
 }
+
+
+export async function getChallegeAvgScore(id) {
+  try {
+    const response = await axiosClient.get(`api/challengeGroups/${id}/reviews/score`);
+    console.log('getChallegeAvgScore response: ', response.data);
+    return response.data.data;
+  } catch (error) {
+    throw new Error('getChallegeAvgScore error: ', error);
+  }
+}
