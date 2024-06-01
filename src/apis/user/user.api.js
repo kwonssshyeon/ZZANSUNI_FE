@@ -1,3 +1,4 @@
+// import { axiosClient } from '../AxiosClient';
 import { axiosClient } from '../AxiosClient';
 
 export async function getUserInfo() {
@@ -10,13 +11,16 @@ export async function getUserInfo() {
   }
 }
 
-export async function fixUserInfo() {
+export async function fixUserInfo(nickname) {
   try {
-    const response = await axiosClient.put('/api/user');
-    console.log('fixUserInfo response: ', response.data);
+    const response = await axiosClient.put('/api/user', {
+      nickname, // Sending the nickname as per API specification
+    });
+    console.log('fixUserInfo response:', response.data);
     return response.data;
   } catch (error) {
-    throw new Error('FixUserInfo error: ', error);
+    console.error('FixUserInfo error:', error);
+    throw new Error('Failed to update user info');
   }
 }
 
