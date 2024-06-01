@@ -11,5 +11,13 @@ export async function getChallengeDetail(id) {
   }
 }
 
-
+export async function joinChallenge(id) {
+  try {
+    const response = await axiosClient.post(`api/challenges/${id}/join`);
+    console.log('joinChallenge response: ', response.data);
+    return response.data.data;
+  } catch (error) {
+    throw new Error('joinChallenge error: ', error);
+  }
+}
 

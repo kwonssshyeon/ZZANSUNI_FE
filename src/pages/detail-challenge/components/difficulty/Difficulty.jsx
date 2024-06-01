@@ -1,6 +1,25 @@
 import * as Styles from './styles';
+import { joinChallenge } from '../../../../apis/detail-challenge/detail.challenge.api';
+import { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 const Difficulty = ({props, max}) => {
+    const [data, setData] = useState(0);
+    const navigate = useNavigate();
+
+    const saveHandler = () =>{
+        joinChallenge(4).then((res) => {
+          setData(res);
+          alert("성공적으로 참여했습니다.");
+          navigate("/"); 
+      }).catch(()=>{
+          alert("이미 참여한 챌린지입니다.");
+          navigate("/"); 
+      });
+    };
+
+
     return (
     <Styles.Outer>
         <Styles.RowWrapper>
@@ -34,7 +53,7 @@ const Difficulty = ({props, max}) => {
             </Styles.RowWrapper>
         </Styles.Wrapper>
         <Styles.BigMargin />
-        <Styles.Btn>참여하기</Styles.Btn>
+        <Styles.Btn onClick={saveHandler}>참여하기</Styles.Btn>
     </Styles.Outer>
     );
   }

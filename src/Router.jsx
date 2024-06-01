@@ -28,6 +28,10 @@ export const Router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <LoginPage />,
+      },
+      {
+        path: 'main',
         element: <MainPage />,
       },
       {
