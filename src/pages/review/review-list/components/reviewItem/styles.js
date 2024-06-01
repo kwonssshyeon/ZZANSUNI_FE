@@ -7,9 +7,9 @@ export const Wrapper = styled.div`
 `;
 
 export const ProfileImg = styled.img`
-    width: 30px;
-    height: 30px;
-    border: 30px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 `;
 
 export const Name = styled.div`
@@ -61,4 +61,12 @@ export const StarWrapper = styled.div`
     top: 0px;
     right: 0px;
     margin: 5px;
+`
+
+export const ImageBox = styled.div`
+  height: 30px;
+  width: 30px;
+  border-radius: 70%;
+  overflow: hidden;
+  z-index: 10;
 `
