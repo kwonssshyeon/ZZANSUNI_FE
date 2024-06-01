@@ -2,12 +2,25 @@ import * as Styles from './styles';
 import Stamp from '../components/Stamp';
 import BottomSheet from '../bottomsheet/BottomSheet';
 import useBottomSheet from '@/hooks/useBottomSheet';
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import { getChallengeRecord, getChallengeRecordDetail  } from '../../../apis/record-challenge/record.challenge.api';
+
 
 const StampBoard = () => {
     const [isBottomSheetOpen, setBottomSheetOpen] = useState(false);
+    const [data, setData] = useState(null);
+    const [items, setItems] = useState([]);
+    const [record, setRecord] = useState([]);
 
-    const items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
+    const setArray = (length, values) => {
+        const array = new Array(length).fill(-1);
+        for (let i = 0; i < values.length; i++) {
+          array[i] = values[i];
+        }
+        setItems(array);
+    };
+
 
     const chunkItems = (arr, chunkSize) => {
         const chunks = [];
@@ -22,8 +35,19 @@ const StampBoard = () => {
     
     const rows = chunkItems(items, 3);
 
-    const toggleBottomSheet = () => {
-        setBottomSheetOpen(true);
+    const toggleBottomSheet = (idx) => {
+        console.log(isBottomSheetOpen);
+        console.log(idx);
+        if (idx===-1){
+            setBottomSheetOpen(false);
+            console.log("ddd");
+        }
+        else {
+            getChallengeRecordDetail(idx).then((res) => {
+                setRecord(res);
+                setBottomSheetOpen(true);
+            });
+        }
     }
 
     const handleDragEnd = (event, info) => {
@@ -31,19 +55,26 @@ const StampBoard = () => {
             setBottomSheetOpen(false);
         }
     };
+
+    useEffect(() => {
+        getChallengeRecord(18).then((res) => {
+          setData(res);
+          setArray(res.totalCount, res.recordIds);
+    })}, []);
     
 
     return (
         <>
+        {data ? 
         <Styles.Wrapper>
-            <Styles.Title>길에 떨어진 쓰레기 줍기 챌린지</Styles.Title> 
+            <Styles.Title>{data.title}</Styles.Title>
             <Styles.StampWrapper>
                 <Styles.Text>챌린지 인증하고 레벨업!<br/>짠돌이가 응원해요</Styles.Text>
-                <Styles.SubText>챌린지 유효기간   2024.05.27 ~ 2024.05.31</Styles.SubText>
+                <Styles.SubText>챌린지 유효기간  {data.startDate} ~ {data.endDate}</Styles.SubText>
                 {rows.map((row, rowIndex) => (
                     <Styles.Row key={rowIndex}>
                         {row.map((item, index) => (
-                            <Styles.Item key={index} rowLength={row.length} onClick={toggleBottomSheet}>
+                            <Styles.Item key={index} rowLength={row.length} onClick={() => {toggleBottomSheet(item)}}>
                                 <Stamp data = {item} />
                             </Styles.Item>    
                         ))}
@@ -51,6 +82,7 @@ const StampBoard = () => {
                 ))}
             </Styles.StampWrapper>
         </Styles.Wrapper>
+        : <div/>}
 
         <Styles.CautionWrapper>
             <Styles.SubText>유의사항</Styles.SubText>
@@ -62,7 +94,7 @@ const StampBoard = () => {
                 스탬프가 정상 인증되지 않는경우 고객센터로 문의하세요<br/></Styles.SmallText>
         </Styles.CautionWrapper>
 
-        <BottomSheet data={{date: '2024.05.27', title: "그냥"}}isOpen={isBottomSheetOpen} onDragEnd={handleDragEnd}/>
+        <BottomSheet data={record} isOpen={isBottomSheetOpen} onDragEnd={handleDragEnd}/>
         </>
     );
 }
