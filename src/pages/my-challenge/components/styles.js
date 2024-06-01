@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const ChallengeListLayout = styled.div`
   /* height: 8rem; */
   display: flex;
-  width: 85vw;
+  /* width: 85vh; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,11 @@ export const ChallengeListLayout = styled.div`
 `;
 export const ChallengeContainer = styled.div`
   display: flex;
-  height: 3rem;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* height: 3rem; */
 `;
 export const ChallengeImgContainer = styled.div`
   border-radius: 100%;
