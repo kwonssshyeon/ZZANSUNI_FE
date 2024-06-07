@@ -33,7 +33,10 @@ const NavigateBar = ({ children }) => {
             />
           </Styles.IconContainer>
           <Styles.IconContainer>
-            <Styles.NavIcon onClick={() => handlerNavigate('/')} src={Home} />
+            <Styles.NavIcon
+              onClick={() => handlerNavigate('/main')}
+              src={Home}
+            />
           </Styles.IconContainer>
           <Styles.IconContainer>
             <Styles.NavIcon
